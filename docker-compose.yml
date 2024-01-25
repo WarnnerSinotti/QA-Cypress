@@ -1,14 +1,13 @@
 version: '3'
 services:
-  e2e:
-    image: cypress/included:3.9.3 # Ou a versão desejada
-    container_name: cypress
-    build: ./e2e
-    environment:
-      - CYPRESS_baseUrl=http://web
-    command: npx cypress run --no-exit
-    volumes:
-      - ./e2e/cypress:/app/cypress
-      - ./e2e/cypress.json:/app/cypress.json
-      - ./e2e/tsconfig.json:/app/tsconfig.json
-      - ./e2e/cypress/integration:/app/cypress/integration
+    e2e:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: cypress
+        environment:
+            - CYPRESS_baseUrl=https://example.cypress.io
+        volumes:
+            - ./cypress.config.ts:/app/cypress.config.ts
+            - ./cypress.env.json:/app/cypress.env.json
+            - ./cypress:/app/cypress

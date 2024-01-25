@@ -1,0 +1,9 @@
+version: '3.2'
+services:
+    cypress:
+        image: qa-cypress-e2e # ou ajuste para o nome correto da imagem
+        entrypoint: /app/node_modules/.bin/cypress open --project=/e2e
+        environment:
+            - DISPLAY
+        volumes:
+            - /tmp/.X11-unix:/tmp/.X11-unix

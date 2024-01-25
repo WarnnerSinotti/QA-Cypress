@@ -1,5 +1,5 @@
 import { defineConfig } from 'cypress';
-import { readPdf, readPdfGetNumPages, readPdfGetSignature } from 'cypress/scripts/pdf';
+import { readPdf, readPdfGetNumPages, readPdfGetSignature } from './cypress/scripts/pdf';
 import allureWriter from '@shelex/cypress-allure-plugin/writer';
 
 export default defineConfig({
