@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "target": "es6",
+        "baseUrl": "./",
+        "module": "CommonJS",
+        "lib": ["es6", "dom"],
+        "types": [
+            "cypress",
+            "node",
+            "@shelex/cypress-allure-plugin",
+            "cypress-file-upload",
+            "cypress-real-events",
+            "cypress-plugin-api",
+            "cypress-xpath"
+        ],
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "noEmit": true
+    },
+    "include": ["**/*.ts", "**/*.json", "cypress.config.ts"]
+}

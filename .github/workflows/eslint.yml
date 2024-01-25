@@ -1,0 +1,17 @@
+name: Validando Eslint Cypress
+
+on:
+    pull_request:
+
+jobs:
+    qa-run-lint:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Run npm install
+              run: npm install
+
+            - name: Run ESLint on Cypress QA push
+              run: npm run lint

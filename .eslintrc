@@ -1,0 +1,104 @@
+{
+    "root": true,
+    "env": {
+        "es6": true,
+        "browser": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint", "cypress", "prettier", "promise", "sonarjs", "sort-imports-es6-autofix", "sort-class-members"],
+    "overrides": [
+        {
+            "files": ["*.ts"],
+            "parserOptions": {
+                "project": ["tsconfig.json", "cypress/tsconfig.json"],
+                "createDefaultProgram": true
+            },
+            "extends": [
+                "eslint:recommended",
+                "plugin:@typescript-eslint/eslint-recommended",
+                "plugin:@typescript-eslint/recommended",
+                "plugin:prettier/recommended",
+                "plugin:promise/recommended",
+                "plugin:you-dont-need-lodash-underscore/compatible"
+            ],
+            "rules": {
+                "@typescript-eslint/no-explicit-any": "off", // TODO: use in future
+                "@typescript-eslint/naming-convention": [
+                    "error",
+                    {
+                        "selector": "classMethod",
+                        "format": ["PascalCase"]
+                    },
+                    {
+                        "selector": "variable",
+                        "format": ["camelCase"]
+                    },
+                    {
+                        "selector": "function",
+                        "format": ["camelCase"],
+                        "modifiers": ["global"]
+                    }
+                ],
+                "promise/no-nesting": "off", //Removido devido a promisse em then
+                "@typescript-eslint/no-namespace": "off",
+                "@typescript-eslint/no-empty-function": "off",
+                "@typescript-eslint/no-throw-literal": "error",
+                "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+                "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+                "complexity": ["warn", { "max": 10 }],
+                "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+                "max-depth": ["error", { "max": 5 }],
+                "max-lines": ["warn", { "max": 1000 }],
+                "max-lines-per-function": ["warn", { "max": 300 }],
+                "max-nested-callbacks": ["error", { "max": 7 }],
+                "max-params": ["warn", { "max": 15 }],
+                "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
+                "no-duplicate-imports": "error",
+                "no-lonely-if": "error",
+                "no-nested-ternary": "warn",
+                "no-unneeded-ternary": "error",
+                "no-unused-private-class-members": "error",
+                "no-var": "error",
+                "padding-line-between-statements": [
+                    "error",
+                    { "blankLine": "any", "prev": ["const", "let", "var"], "next": "*" },
+                    { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] },
+                    { "blankLine": "any", "prev": "*", "next": "return" }
+                ],
+                "prettier/prettier": ["error", { "endOfLine": "auto" }],
+                "promise/always-return": "off",
+                "promise/catch-or-return": "off",
+                "spaced-comment": "warn"
+            }
+        },
+        {
+            "files": ["*.cy.ts", "e2e.ts"],
+            "parserOptions": {
+                "createDefaultProgram": true,
+                "project": ["tsconfig.json", "cypress/tsconfig.json"]
+            },
+            "extends": ["plugin:cypress/recommended"],
+            "rules": {
+                "cypress/assertion-before-screenshot": "error",
+                "cypress/no-assigning-return-values": "error",
+                "cypress/no-async-tests": "error",
+                "cypress/no-force": "error", // Após correção, voltar para error
+                "cypress/no-pause": "error",
+                "cypress/no-unnecessary-waiting": "error",
+                "cypress/unsafe-to-chain-command": "error"
+                // "cypress/require-data-selectors": "error" // Adicionar após inserção de reference id
+            }
+        },
+        {
+            "files": ["*.spec.ts", "*.cy.ts"],
+            "parserOptions": {
+                "createDefaultProgram": true,
+                "project": ["tsconfig.json", "cypress/tsconfig.json"]
+            },
+            "rules": {
+                "max-lines": ["warn", { "max": 1000 }],
+                "max-lines-per-function": "off"
+            }
+        }
+    ]
+}

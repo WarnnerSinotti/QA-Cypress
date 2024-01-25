@@ -1,0 +1,26 @@
+# Node artifact files
+node_modules/
+
+# Env Cypress
+cypress.env.json
+cypress/screenshots
+cypress/downloads
+cypress/videos/**
+cypress/results/**
+
+#YARN 
+yarn.lock
+yarn-error.log
+
+#Report
+allure-report 
+allure-results
+
+#TEMPORARIO
+cypress/e2e/test
+
+#QA
+cypress.envWarnner.json
+
+
+
