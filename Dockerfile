@@ -27,5 +27,6 @@ RUN npm install
 RUN npx cypress install
 
 # Execute os testes Cypress
-# CMD ["npx", "cypress", "run"]
-CMD ["npx", "cypress", "run", "--no-exit"]
+#CMD ["npx", "cypress", "run"]
+# CMD ["npx", "cypress", "run", "--no-exit"]
+ENTRYPOINT ["npx", "cypress", "run", "--exit"]
