@@ -29,6 +29,12 @@ Este projeto de cypress tem o intuito de faciliar e auxiliar os novos qas a este
 
 Resumindo: Facilitando a vida do QA em seu dia a dia.
 
+## Docker compose
+
+### Rodar os testes
+
+comando no terminal **docker compose up**
+
 ### Autor
 
 **Warnner Sinotti**
