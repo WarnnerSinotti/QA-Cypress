@@ -16,11 +16,7 @@ yarn-error.log
 allure-report 
 allure-results
 
-#TEMPORARIO
-cypress/e2e/test
 
-#QA
-cypress.envWarnner.json
 
 
 
