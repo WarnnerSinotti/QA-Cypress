@@ -1,4 +1,4 @@
-describe('Teste validações no documento pdf', () => {
+describe('01-Teste validações no documento pdf', () => {
     const filePath = 'cypress/fixtures/document.pdf';
     const totalPages = 3;
     const text = 'Cypress';

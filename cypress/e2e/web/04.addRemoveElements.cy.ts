@@ -1,4 +1,4 @@
-describe('Teste utilizando for para adicionar e remover buttons', () => {
+describe('04-Teste utilizando for para adicionar e remover buttons', () => {
     const url = Cypress.env('BASE_URL');
 
     beforeEach(() => {

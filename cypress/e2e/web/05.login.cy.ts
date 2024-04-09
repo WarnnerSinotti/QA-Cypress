@@ -1,4 +1,4 @@
-describe('Teste Logando via url e via credenciais headers', () => {
+describe('05-Teste Logando via url e via credenciais headers', () => {
     const username: string = Cypress.env('USERNAME');
     const password: string = Cypress.env('PASSWORD');
     const url = Cypress.env('BASE_URL') + 'basic_auth';

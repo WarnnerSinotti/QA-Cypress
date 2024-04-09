@@ -1,4 +1,4 @@
-describe('Teste acessando outro link na mesma guia da utilizacao do cypress', () => {
+describe('03-Teste acessando outro link na mesma guia da utilizacao do cypress', () => {
     const url = Cypress.env('BASE_URL');
 
     it('Acessando outra url na mesma guia do navegador', () => {
