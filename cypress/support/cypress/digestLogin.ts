@@ -23,6 +23,6 @@ export const loginDigestAuth = (username: string, password: string) => {
     }).then((response) => {
         // Verifique se a resposta é bem-sucedida e se a autenticação foi feita corretamente
         expect(response.status).to.eq(200);
-        //cy.visit('https://the-internet.herokuapp.com/digest_auth');
+        // cy.visit('https://the-internet.herokuapp.com/digest_auth');
     });
 };
