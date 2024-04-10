@@ -1,8 +1,6 @@
 describe('09-Teste validando Context Menu', () => {
-    const url = Cypress.env('BASE_URL');
-
     beforeEach(() => {
-        cy.visit(url);
+        cy.visit(Cypress.env('BASE_URL'));
         cy.get('ul > :nth-child(7) > a').should('contain.text', 'Context Menu').click();
     });
 

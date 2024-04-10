@@ -1,7 +1,7 @@
 describe('05-Teste Logando via url e via credenciais headers', () => {
     const username: string = Cypress.env('USERNAME');
     const password: string = Cypress.env('PASSWORD');
-    const url = Cypress.env('BASE_URL') + 'basic_auth';
+    const url = Cypress.env('BASE_URL') + '/basic_auth';
 
     it('Logando passando username and password na URL', function () {
         cy.visit(`https://${username}:${password}@the-internet.herokuapp.com/basic_auth`);

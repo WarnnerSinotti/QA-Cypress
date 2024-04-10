@@ -1,8 +1,6 @@
 describe('04-Teste utilizando for para adicionar e remover buttons', () => {
-    const url = Cypress.env('BASE_URL');
-
     beforeEach(() => {
-        cy.visit(url);
+        cy.visit(Cypress.env('BASE_URL'));
         cy.get('ul > :nth-child(2) > a').should('contain.text', 'Add/Remove Elements').click();
     });
 

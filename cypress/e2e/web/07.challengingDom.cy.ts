@@ -1,8 +1,6 @@
 describe('07-Teste validando imagem quebrada', () => {
-    const url = Cypress.env('BASE_URL');
-
     beforeEach(() => {
-        cy.visit(url);
+        cy.visit(Cypress.env('BASE_URL'));
         cy.get('ul > :nth-child(5) > a').should('contain.text', 'Challenging DOM').click();
     });
 

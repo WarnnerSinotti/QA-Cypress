@@ -1,8 +1,6 @@
 describe('08-Teste validando checkbox', () => {
-    const url = Cypress.env('BASE_URL');
-
     beforeEach(() => {
-        cy.visit(url);
+        cy.visit(Cypress.env('BASE_URL'));
         cy.get('ul > :nth-child(6) > a').should('contain.text', 'Checkboxes').click();
     });
 
