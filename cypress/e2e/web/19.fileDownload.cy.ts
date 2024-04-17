@@ -7,14 +7,19 @@ describe('19-Teste validando modal em File Download', () => {
     it('Validando modal passando mouse do meio da tela para cima em File Download', () => {
         cy.get('h3').should('contain.text', 'File Downloader');
 
-        cy.get('[href="download/Jntuh.pdf.pdf"]').should('be.visible').click();
-        cy.get('[href="download/Jntuh.pdf.pdf"]')
-            .invoke('attr', 'href')
-            .then((url) => {
-                cy.log(url);
-                const nomeArquivo = url.split('/').pop().split('?')[0];
-                cy.log('Nome do arquivo:', nomeArquivo);
-                cy.readFile(`cypress/downloads/${nomeArquivo}`).should('exist');
+        cy.get('.example a')
+            .eq(0)
+            .invoke('text')
+            .then((text) => {
+                cy.get(`[href="download/${text}"]`).should('be.visible').click();
+                cy.get(`[href="download/${text}"]`)
+                    .invoke('attr', 'href')
+                    .then((url) => {
+                        cy.log(url);
+                        const nomeArquivo = url.split('/').pop().split('?')[0];
+                        cy.log('Nome do arquivo:', nomeArquivo);
+                        cy.readFile(`cypress/downloads/${nomeArquivo}`).should('exist');
+                    });
             });
     });
 });
