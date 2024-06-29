@@ -1,13 +1,14 @@
-version: '3'
+version: '3.8'
 services:
     e2e:
         build:
             context: .
             dockerfile: Dockerfile
-        container_name: cypress
-        environment:
-            - CYPRESS_baseUrl=https://example.cypress.io
         volumes:
+            - .:/app
             - ./cypress.config.ts:/app/cypress.config.ts
             - ./cypress.env.json:/app/cypress.env.json
+            - ./cypress:/app/cypress
+        environment:
+            - CYPRESS_baseUrl=https://example.cypress.io
             - ./cypress:/app/cypress

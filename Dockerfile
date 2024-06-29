@@ -18,7 +18,8 @@ RUN apt-get update && apt-get install -y \
     libasound2 \
     libxtst6 \
     xauth \
-    xvfb
+    xvfb \
+    --fix-missing
 
 # Instale as dependências do Cypress
 RUN npm install
@@ -27,5 +28,6 @@ RUN npm install
 RUN npx cypress install
 
 # Execute os testes Cypress
-# CMD ["npx", "cypress", "run"]
-CMD ["npx", "cypress", "run", "--no-exit"]
+# CMD ["npx", "cypress", "run", "--no-exit"]
+# Execute os testes Cypress usando o script cypress:test
+CMD ["npm", "run", "cypress:run"]
