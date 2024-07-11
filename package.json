@@ -17,7 +17,7 @@
         "@types/pdf-parse": "^1.1.4",
         "@types/regenerator-runtime": "^0.13.5",
         "allure-commandline": "^2.25.0",
-        "cypress": "^13.7.3",
+        "cypress": "^13.13.0",
         "cypress-file-upload": "^5.0.8",
         "eslint": "^8.55.0",
         "eslint-config-prettier": "^9.1.0",
