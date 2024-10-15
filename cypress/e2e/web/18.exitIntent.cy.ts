@@ -1,10 +1,12 @@
 describe('18-Teste validando modal em Exit Intent', () => {
     beforeEach(() => {
-        cy.visit(Cypress.env('BASE_URL'));
+        cy.visit('/');
         cy.get('ul > :nth-child(16) > a').should('contain.text', 'Exit Intent').click();
     });
 
     it('Validando modal passando mouse do meio da tela para cima em Exit Intent', () => {
+        cy.allureSeverity('normal');
+
         cy.get('.example > h3').should('be.visible');
         const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;

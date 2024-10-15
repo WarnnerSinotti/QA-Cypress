@@ -1,10 +1,12 @@
 describe('17-Teste validando modal em Entry Ad', () => {
     beforeEach(() => {
-        cy.visit(Cypress.env('BASE_URL'));
+        cy.visit('/');
         cy.get('ul > :nth-child(15) > a').should('contain.text', 'Entry Ad').click();
     });
 
     it('Validando modal em Entry Ad', () => {
+        cy.allureSeverity('normal');
+
         cy.get('.modal').should('be.visible');
         cy.get('.modal-title').should('contain.text', 'This is a modal');
         cy.get('.modal-body').should(

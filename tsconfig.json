@@ -5,18 +5,10 @@
         "baseUrl": "./",
         "module": "CommonJS",
         "lib": ["es6", "dom"],
-        "types": [
-            "cypress",
-            "node",
-            "@shelex/cypress-allure-plugin",
-            "cypress-file-upload",
-            "cypress-real-events",
-            "cypress-plugin-api",
-            "cypress-xpath"
-        ],
+        "types": ["cypress", "node", "cypress-file-upload", "cypress-real-events", "cypress-plugin-api"],
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "noEmit": true
     },
-    "include": ["**/*.ts", "**/*.json", "cypress.config.ts"]
+    "include": ["**/*.ts", "**/*.json", "cypress.config.ts", "./cypress/scripts/*.ts"]
 }

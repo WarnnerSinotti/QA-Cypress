@@ -1,10 +1,12 @@
 describe('14-Teste validando texto com Dynamic Content', () => {
     beforeEach(() => {
-        cy.visit(Cypress.env('BASE_URL'));
+        cy.visit('/');
         cy.get('ul > :nth-child(12) > a').should('contain.text', 'Dynamic Content').click();
     });
 
     it('Validando texto com Dynamic Content', () => {
+        cy.allureSeverity('normal');
+
         cy.get('h3').should('contain.text', 'Dynamic Content');
 
         cy.get('img').and('have.prop', 'naturalWidth').should('be.greaterThan', 0);

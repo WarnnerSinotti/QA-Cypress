@@ -1,10 +1,12 @@
 describe('12-Teste validando Drag and Drop', () => {
     beforeEach(() => {
-        cy.visit(Cypress.env('BASE_URL'));
+        cy.visit('/');
         cy.get('ul > :nth-child(10) > a').should('contain.text', 'Drag and Drop').click();
     });
 
     it('Validando os Drag and Drop', () => {
+        cy.allureSeverity('critical');
+
         cy.get('h3').should('contain.text', 'Drag and Drop');
 
         // Encontrar os elementos a serem arrastados

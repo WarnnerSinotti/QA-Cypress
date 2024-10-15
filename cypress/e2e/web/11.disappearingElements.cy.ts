@@ -7,6 +7,8 @@ describe('11-Teste validando Disappearing Elements', () => {
     });
 
     it('Validando os Disappearing Elements', () => {
+        cy.allureSeverity('normal');
+
         cy.get('h3').should('contain.text', 'Disappearing Elements');
         cy.get('ul > li').eq(0).contains('Home');
         cy.get('ul > li').eq(1).contains('About');
@@ -24,6 +26,8 @@ describe('11-Teste validando Disappearing Elements', () => {
     });
 
     it('Validando os buttons no header de Disappearing Elements', () => {
+        cy.allureSeverity('normal');
+
         cy.get('h3').should('contain.text', 'Disappearing Elements');
         cy.get('ul > li').eq(0).contains('Home').click();
         cy.url().should('contain', url);

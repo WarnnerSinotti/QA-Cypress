@@ -9,6 +9,7 @@ describe('05-Teste Logando via url e via credenciais headers', () => {
     });
 
     it('Logando com autorização do header', () => {
+        cy.allureSeverity('blocker');
         // Para pegar o header de autrização, usa api ou postman
         cy.visit(url, {
             headers: {

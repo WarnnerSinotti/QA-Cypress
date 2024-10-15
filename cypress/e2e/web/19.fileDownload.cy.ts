@@ -1,10 +1,12 @@
 describe('19-Teste validando modal em File Download', () => {
     beforeEach(() => {
-        cy.visit(Cypress.env('BASE_URL'));
+        cy.visit('/');
         cy.get('ul > :nth-child(17) > a').should('contain.text', 'File Download').click();
     });
 
     it('Validando modal passando mouse do meio da tela para cima em File Download', () => {
+        cy.allureSeverity('critical');
+
         cy.get('h3').should('contain.text', 'File Downloader');
 
         cy.get('.example a')

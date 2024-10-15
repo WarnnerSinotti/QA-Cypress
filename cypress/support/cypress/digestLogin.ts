@@ -6,10 +6,6 @@ declare global {
     }
 }
 
-export const deleteFile = (filePath: string) => {
-    cy.exec(`rm -f ${filePath}`, { failOnNonZeroExit: false });
-};
-
 export const loginDigestAuth = (username: string, password: string) => {
     cy.request({
         method: 'GET',

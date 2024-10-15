@@ -2,11 +2,13 @@ describe('20-Teste insercao de documento para file upload', () => {
     const filePath = 'document.txt';
 
     beforeEach(() => {
-        cy.visit(Cypress.env('BASE_URL'));
+        cy.visit('/');
         cy.get('ul > :nth-child(18) > a').should('contain.text', 'File Upload').click();
     });
 
     it('Inserindo documento para upload', () => {
+        cy.allureSeverity('critical');
+
         cy.intercept('POST', '/upload').as('uploadRequest');
         cy.get('h3').should('contain.text', 'File Upload');
         cy.get('[id="file-upload"]').attachFile(filePath);
@@ -20,6 +22,8 @@ describe('20-Teste insercao de documento para file upload', () => {
         cy.get('#uploaded-files').should('be.visible');
     });
     it.skip('Inserindo documento via drag n drop', () => {
+        cy.allureSeverity('critical');
+
         cy.intercept('POST', '/upload').as('uploadRequest');
         cy.get('h3').should('contain.text', 'File Upload');
         // em construção
@@ -33,6 +37,8 @@ describe('20-Teste insercao de documento para file upload', () => {
         cy.get('#uploaded-files').should('be.visible');
     });
     it('clicar upload sem anexar documento, retornando erro 500', () => {
+        cy.allureSeverity('critical');
+
         cy.intercept('POST', '/upload').as('uploadRequest');
         cy.get('h3').should('contain.text', 'File Upload');
 

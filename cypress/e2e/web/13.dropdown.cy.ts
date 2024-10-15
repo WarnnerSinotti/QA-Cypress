@@ -1,10 +1,12 @@
 describe('13-Teste validando Dropdown', () => {
     beforeEach(() => {
-        cy.visit(Cypress.env('BASE_URL'));
+        cy.visit('/');
         cy.get('ul > :nth-child(11) > a').should('contain.text', 'Dropdown').click();
     });
 
     it('Validando os Dropdown', () => {
+        cy.allureSeverity('critical');
+
         cy.get('h3').should('contain.text', 'Dropdown');
 
         cy.get('#dropdown').select(1);

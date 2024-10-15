@@ -4,11 +4,13 @@ describe('15-Teste validando texto com Dynamic Controls', () => {
     const name: string = dadosFake.firstName;
 
     beforeEach(() => {
-        cy.visit(Cypress.env('BASE_URL'));
+        cy.visit('/');
         cy.get('ul > :nth-child(13) > a').should('contain.text', 'Dynamic Controls').click();
     });
 
     it('Validando Textos em Dynamic Controls', () => {
+        cy.allureSeverity('normal');
+
         cy.get('h4').should('contain.text', 'Dynamic Controls');
         cy.get('.example > :nth-child(2)').should(
             'include.text',
@@ -19,6 +21,8 @@ describe('15-Teste validando texto com Dynamic Controls', () => {
     });
 
     it('Removendo checkbox em Dynamic Controls', () => {
+        cy.allureSeverity('normal');
+
         cy.get('h4').should('contain.text', 'Dynamic Controls');
 
         cy.get('#checkbox > input').check();
@@ -28,6 +32,8 @@ describe('15-Teste validando texto com Dynamic Controls', () => {
     });
 
     it('Habilitando input text em Dynamic Controls', () => {
+        cy.allureSeverity('normal');
+
         cy.get('h4').should('contain.text', 'Dynamic Controls');
 
         cy.get('#input-example > input').should('be.disabled');
