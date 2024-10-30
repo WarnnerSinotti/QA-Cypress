@@ -11,10 +11,8 @@ Este projeto foi desenvolvido para facilitar e guiar novos QAs no universo do fr
 -   **Node.js**: Para rodar o projeto, é necessário ter o [Node.js](https://nodejs.org/en/) (preferencialmente a versão LTS).
 -   **Git**: Usamos o [Git](https://git-scm.com/) para controle de versão. Recomendamos o [GitHub Desktop](https://desktop.github.com/) para quem prefere uma interface gráfica.
 -   **Editor de Código**: Recomendamos o uso do [Visual Studio Code](https://code.visualstudio.com/) (VS Code) para edição de código, com as extensões sugeridas abaixo.
--   **nvm** (Node Version Manager): Para gerenciar múltiplas versões do Node.js.
--   **Node.js** v20.x.x ou **Yarn**: Ambiente para execução do projeto.
--   **Allure Reporter**: Ferramenta opcional para visualização de relatórios de testes interativos.
--   **Docker Compose**: Para executar e manter a consistência dos testes em ambientes virtualizados.
+-   **[Allure Reporter](https://docs.qameta.io/allure/)**: Ferramenta opcional para visualização de relatórios de testes interativos.
+-   **[Docker Compose](https://docs.docker.com/compose/)**: Para executar e manter a consistência dos testes em ambientes virtualizados.
 
 ### 1. Instalação do Cypress
 
@@ -49,7 +47,7 @@ pnpm install
 
 ### 4. Executando o Projeto ▶️
 
-Crie um arquivo `cypress.env.json` com base no `cypress.envExemplo.json` e solicite ao time os valores corretos.
+Crie um arquivo `cypress.env.json` com base no `cypress.envExemplo.json`.
 
 Para iniciar o projeto, execute:
 
@@ -60,6 +58,14 @@ npx cypress open
 Se tudo estiver correto, o projeto executará o cypress em modo cli 🚀.
 
 ---
+
+### 🐳 Executar os testes com Docker Compose
+
+Para executar os testes, simplesmente execute o seguinte comando no terminal:
+
+```bash
+docker compose up
+```
 
 ## 🗂 Estrutura do Projeto
 
@@ -77,14 +83,6 @@ Este projeto adota práticas avançadas e automações para simplificar o dia a 
 -   **ESLint e Prettier**: garantem código limpo e organizado.
 -   **Relatórios de Testes (Allure Report)**: relatórios detalhados e prontos para análise.
 -   **Modularidade**: testes, fixtures e comandos Cypress são estruturados para fácil acesso e reutilização.
-
-## 🐳 Executando com Docker Compose
-
-Para executar os testes, simplesmente execute o seguinte comando no terminal:
-
-```bash
-docker compose up
-```
 
 ## 📜 Licença
 
