@@ -5,6 +5,7 @@ export const api = {
 };
 
 export const time = {
+    simple: 500,
     element: 2000,
     waitApi: 22000,
     webhook: 5000,

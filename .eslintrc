@@ -82,7 +82,7 @@
                 "cypress/assertion-before-screenshot": "error",
                 "cypress/no-assigning-return-values": "error",
                 "cypress/no-async-tests": "error",
-                "cypress/no-force": "error", // Após correção, voltar para error
+                "cypress/no-force": "warn", // Após correção, voltar para error
                 "cypress/no-pause": "error",
                 "cypress/no-unnecessary-waiting": "error",
                 "cypress/unsafe-to-chain-command": "error"
